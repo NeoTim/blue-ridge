@@ -8,7 +8,9 @@ The Blue Ridge JavaScript Testing Rails Plugin adds support for command-line and
 * `Smoke` - a JavaScript mocking & stubbing library similar to Mocha
 * `env.js` - a DOM implementation written entirely in JavaScript
 
-Please join our [mailing list](http://groups.google.com/group/blueridgejs) if you're interested in Blue Ridge!  Also, check out if our build is broken (it'd better NOT be!) on [RunCodeRun](http://runcoderun.com/relevance/blue-ridge).
+Please join our [mailing list](http://groups.google.com/group/blueridgejs) if you're interested in Blue Ridge!  
+
+*Note: This version now has Rails 3 compatible generators*
 
 Installing and Running
 ----------------------
@@ -16,7 +18,15 @@ Installing and Running
 To install:
 
     ./script/plugin install git://github.com/relevance/blue-ridge.git
-    ./script/generate blue_ridge
+
+To create a Blue Ridge skeleton infrastructure
+
+Rails 2:
+    $ script/generate blue_ridge
+
+Rails 3:
+    $ rails g blue_ridge:skeleton
+
   
 To run all of the specs:
 
@@ -30,7 +40,12 @@ To run an individual spec file called "application_spec.js":
     
 To generate and run a spec for a JavaScript file called "public/javascripts/graphics.js" run:
 
+Rails 2:
     ./script/generate javascript_spec graphics
+
+Rails 3:
+    $ rails g blue_ridge:javascript_spec graphics
+
     rake test:javascripts TEST=graphics
 
 To run your spec inside a web browser, load the `HTML fixture` associated with the spec. (See below for more information on HTML fixtures and in-browser testing).
@@ -209,7 +224,6 @@ Links
 * [Blue Ridge JavaScript Testing Rails Plugin](http://github.com/relevance/blue-ridge)
 * [Blue Ridge Sample App](http://github.com/relevance/blue-ridge-sample-app)
 * [Mailing List](http://groups.google.com/group/blueridgejs)
-* [Blue Ridge Build Status on RunCodeRun](http://runcoderun.com/relevance/blue-ridge)
 * [Justin Gehtland's "Fully Headless JSSpec" Blog Post](http://blog.thinkrelevance.com/2008/7/31/fully-headless-jsspec)
 * [Screw.Unit](http://github.com/nkallen/screw-unit)
 * [Screw.Unit Mailing List](http://groups.google.com/group/screw-unit)

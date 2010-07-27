@@ -13,5 +13,14 @@ class BlueRidgeGenerator < Rails::Generator::Base
       m.file 'application.html', "#{base_dir}/fixtures/application.html"
       m.file 'screw.css',        "#{base_dir}/fixtures/screw.css"
     end
+  end 
+  
+  def self.gem_root
+    File.expand_path('../../../', __FILE__)
   end
+
+  def self.source_root
+    File.join(gem_root, 'templates', 'skeleton')
+  end
+  
 end
